@@ -1,0 +1,109 @@
+/*
+  Cinematic typography system.
+  Rules here establish the feel of every text element in Frame —
+  type as direction, weight as emotion, spacing as breath.
+*/
+
+/* ── Display — Cormorant Garamond ────────────────────── */
+/*
+  Used for: hero titles, chapter headings, pull quotes.
+  Cormorant at light weight reads like hand-set metal type.
+  We never set it bold — weight is handled by size.
+*/
+.t-display {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-style: normal;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  font-feature-settings: "liga" 1, "kern" 1, "onum" 1;
+}
+
+.t-display-italic {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-style: italic;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  font-feature-settings: "liga" 1, "kern" 1, "swsh" 1;
+}
+
+/* ── Sans — Geist Sans ──────────────────────────────── */
+/*
+  Used for: body, UI, labels, captions.
+  Kept at regular weight. Spaced out for hierarchy.
+*/
+.t-body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  letter-spacing: var(--tracking-normal);
+}
+
+.t-label {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--text-2xs);
+  line-height: 1;
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+}
+
+.t-caption {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--text-xs);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-wide);
+  color: var(--muted);
+}
+
+/* ── Mono — Geist Mono ──────────────────────────────── */
+/*
+  Used for: frame counters, timecodes, technical metadata.
+  Tabular numerals by default.
+*/
+.t-mono {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: var(--text-2xs);
+  line-height: 1;
+  letter-spacing: var(--tracking-wider);
+  font-feature-settings: "tnum" 1;
+}
+
+/* ── Fluid display scale ─────────────────────────────── */
+/*
+  clamp(min, preferred, max) — scales with viewport.
+  Use these classes on h1/h2 elements in scenes.
+*/
+.t-hero {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(4rem, 13vw, 12rem);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+}
+
+.t-chapter {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(2.5rem, 6vw, 6rem);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+}
+
+.t-subheading {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  line-height: var(--leading-snug);
+  letter-spacing: -0.01em;
+}
+
+/* ── Text selection ──────────────────────────────────── */
+::selection {
+  background-color: var(--accent);
+  color: var(--background);
+}

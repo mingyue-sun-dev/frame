@@ -1,0 +1,91 @@
+/*
+  Design tokens for Frame.
+  All values are CSS custom properties consumed by Tailwind @theme
+  and referenced directly in component styles.
+*/
+
+:root {
+  /* ── Color ─────────────────────────────────────────── */
+  --color-black:        #080808;   /* true cinematic black          */
+  --color-void:         #0d0d0d;   /* scene card background         */
+  --color-smoke:        #1a1a1a;   /* elevated surfaces             */
+  --color-iron:         #2e2e2e;   /* subtle borders                */
+  --color-ash:          #5a5a5a;   /* muted / disabled text         */
+  --color-dust:         #9e9e9e;   /* secondary text                */
+  --color-silver:       #c8c8c8;   /* body text                     */
+  --color-ivory:        #f0ede8;   /* primary foreground            */
+  --color-white:        #fafaf9;   /* true white (use sparingly)    */
+
+  /* Accent — warm amber, like tungsten light through celluloid */
+  --color-gold:         #c8a96e;
+  --color-gold-dim:     #8a6e3e;
+  --color-gold-bright:  #e8c98e;
+
+  /* Semantic aliases */
+  --background:         var(--color-black);
+  --foreground:         var(--color-ivory);
+  --accent:             var(--color-gold);
+  --muted:              var(--color-ash);
+  --border:             var(--color-iron);
+  --surface:            var(--color-void);
+
+  /* ── Typography ─────────────────────────────────────── */
+  --font-sans:          var(--font-geist-sans);
+  --font-mono:          var(--font-geist-mono);
+  --font-display:       var(--font-cormorant);
+
+  /* Type scale — major third (1.25×) from 0.75rem base */
+  --text-2xs:   0.625rem;   /* 10px — frame counters, metadata */
+  --text-xs:    0.75rem;    /* 12px — labels, captions         */
+  --text-sm:    0.875rem;   /* 14px — body secondary           */
+  --text-base:  1rem;       /* 16px — body primary             */
+  --text-lg:    1.25rem;    /* 20px — lead paragraph           */
+  --text-xl:    1.5rem;     /* 24px — sub-heading              */
+  --text-2xl:   2rem;       /* 32px — section heading          */
+  --text-3xl:   2.75rem;    /* 44px — chapter title            */
+  --text-4xl:   4rem;       /* 64px — hero secondary           */
+  --text-5xl:   6rem;       /* 96px — hero primary             */
+  --text-6xl:   9rem;       /* 144px — cinematic display       */
+
+  /* Line heights */
+  --leading-tight:   1.05;
+  --leading-snug:    1.2;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.7;
+
+  /* Letter spacing */
+  --tracking-tight:  -0.03em;
+  --tracking-normal:  0;
+  --tracking-wide:    0.08em;
+  --tracking-wider:   0.2em;
+  --tracking-widest:  0.4em;
+
+  /* ── Motion ─────────────────────────────────────────── */
+  /* Duration — think in film frames (24fps = ~42ms per frame) */
+  --duration-flash:    80ms;    /* 2 frames  — instant cut       */
+  --duration-quick:    200ms;   /* 5 frames  — UI feedback       */
+  --duration-normal:   400ms;   /* 10 frames — standard          */
+  --duration-slow:     700ms;   /* 17 frames — deliberate        */
+  --duration-cinematic: 1100ms; /* 26 frames — dramatic entrance */
+  --duration-epic:     1800ms;  /* 43 frames — full-bleed reveal */
+
+  /* ── Spacing ─────────────────────────────────────────── */
+  /* Base unit: 4px. Cinematic sections use larger multiples. */
+  --space-scene:  clamp(5rem, 12vh, 9rem);   /* vertical padding per scene  */
+  --space-column: clamp(1.5rem, 4vw, 3rem);  /* horizontal column gap       */
+
+  /* ── Aspect ratios ──────────────────────────────────── */
+  --ratio-cinema:    2.39;   /* anamorphic scope (2.39:1) */
+  --ratio-wide:      1.778;  /* 16:9                      */
+  --ratio-classic:   1.333;  /* 4:3                       */
+  --ratio-portrait:  0.5625; /* 9:16                      */
+
+  /* ── Z-index layers ─────────────────────────────────── */
+  --z-base:       0;
+  --z-scene:      10;
+  --z-overlay:    100;
+  --z-nav:        500;
+  --z-cursor:     900;
+  --z-grain:      999;
+  --z-letterbox:  1000;
+}
